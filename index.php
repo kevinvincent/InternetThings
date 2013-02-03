@@ -16,6 +16,7 @@
       to the bottom of the topbar */ }
     </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/our.css">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
@@ -35,113 +36,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-    <style type="text/css">
 
-      /* Sticky footer styles
-      -------------------------------------------------- */
-
-      html,
-      body {
-        height: 100%;
-        /* The html and body elements cannot have any padding or margin. */
-      }
-
-      /* Wrapper for page content to push down footer */
-      #wrap {
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        /* Negative indent footer by it's height */
-        margin: 0 auto -60px;
-      }
-
-      /* Set the fixed height of the footer here */
-      #push,
-      #footer {
-        height: 60px;
-      }
-      #footer {
-        background-color: #f5f5f5;
-      }
-
-      /* Lastly, apply responsive CSS fixes as necessary */
-      @media (max-width: 767px) {
-        #footer {
-          margin-left: -20px;
-          margin-right: -20px;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-      }
-
-      /* CUSTOMIZE THE NAVBAR
-    -------------------------------------------------- */
-
-    /* Special class on .container surrounding .navbar, used for positioning it into place. */
-    .navbar-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      margin-top: 20px;
-      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
-    }
-    .navbar-wrapper .navbar {
-
-    }
-
-    /* Remove border and change up box shadow for more contrast */
-    .navbar .navbar-inner {
-      border: 0;
-      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-              box-shadow: 0 2px 10px rgba(0,0,0,.25);
-    }
-
-    /* Downsize the brand/project name a bit */
-    .navbar .brand {
-      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
-      font-size: 16px;
-      font-weight: bold;
-      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-    }
-
-    /* Navbar links: increase padding for taller navbar */
-    .navbar .nav > li > a {
-      padding: 15px 20px;
-    }
-
-    /* Offset the responsive button for proper vertical alignment */
-    .navbar .btn-navbar {
-      margin-top: 10px;
-    }
-
-    /* RESPONSIVE CSS
-    -------------------------------------------------- */
-
-    @media (max-width: 979px) {
-
-      .container.navbar-wrapper {
-        margin-bottom: 0;
-        width: auto;
-      }
-      .navbar-inner {
-        border-radius: 0;
-        margin: -20px 0;
-      }
-    }
-
-
-    @media (max-width: 767px) {
-
-      .navbar-inner {
-        margin: -20px;
-      }
-
-    }
-
-    </style>
   </head>
   <body>
     
@@ -182,7 +77,7 @@
 
             <div class="row-fluid">
             <div class="well span4" style="overflow-y:auto;" id="tablebox">
-                <center><p>Data Sent To Dashboard</p></center>
+                <center><h4>Data Sent To Dashboard</h4></center>
                 <table class="table table-condensed">
                     <tr>
                         <td>1</td>
@@ -273,7 +168,7 @@
 
             <!-- GRAPH GRAPH GRAPH GRAPH -->
             <div class="well span8" id="outer">
-                <center><p>Temperature Monitor</p></center>
+                <center><h4>Temperature Monitor</h4></center>
                 <div id="placeholder" style="width:600px;height:300px"></div>
             </div>
             </div>
@@ -304,14 +199,47 @@
         <!-- METER METER METER METER METER -->
 
             <div class="row-fluid">
-                <div class="well span12">
-                      <center>Overall Danger Meter</center>
+                <div class="well span4">
+                      <center><h4>Overall Danger Meter</h4></center>
                       </br>
                       <div class="progress">
                       <div class="bar bar-success" style="width: 35%;"></div>
                       <div class="bar bar-warning" style="width: 20%;"></div>
-                      <div class="bar bar-danger" style="width: 10%;"></div>
+                      <div class="bar bar-danger" style="width: 20%;"></div>
                     </div>
+                </div>
+                <div class="well span8">
+                    <center><h4>Progress Meter</h4></center>
+                      </br>
+                    <div class="progress progress-striped active">
+                      <div class="bar" style="width: 40%;"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- METER METER METER METER METER -->
+
+            <div class="row-fluid">
+                <div class="well span4">
+                      <center><h4>Overall Danger Meter 2</h4></center>
+                      </br>
+                      <div class="progress">
+                      <div class="bar bar-success" style="width: 35%;"></div>
+                      <div class="bar bar-warning" style="width: 20%;"></div>
+                      <div class="bar bar-danger" style="width: 20%;"></div>
+                    </div>
+                </div>
+                <div class="well span8">
+                    <center><h4>Text Box</h4></center>
+                      </br>
+                    <p>String From Connected Device: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Duis bibendum, lacus sed feugiat tempor, augue dui molestie dui, id accumsan purus ipsum a quam.
+                        In vel sapien orci. Sed lobortis rhoncus dictum. Aenean elementum elementum nunc et sodales.
+                        Vivamus risus nulla, ultricies quis accumsan eget, convallis at odio.
+                        Suspendisse accumsan dignissim tortor sit amet porttitor.
+                        Ut dignissim nibh nec lacus ullamcorper et semper ante mollis.
+                    </p>
                 </div>
             </div>
 
@@ -320,101 +248,7 @@
         <script src="assets/js/bootstrap.js">
         </script>
 
-        <script type="text/javascript">
-            $(document).ready(function(){
-
-                $(function () {
-
-                    $("#placeholder").css("width", $("#outer").width());
-                    $("#tablebox").css("height", $("#outer").height()+40);
-                    
-                    var g1 = new JustGage({
-                        id: "gauge1",
-                        value: 0,
-                        min: 0,
-                        max: 100,
-                        title: "Parameter 1",
-                        startAnimationTime: 0
-                    });
-
-                    var g2 = new JustGage({
-                        id: "gauge2",
-                        value: 0,
-                        min: 0,
-                        max: 100,
-                        title: "Parameter 2",
-                        startAnimationTime: 0
-                    });
-
-                    var g3 = new JustGage({
-                        id: "gauge3",
-                        value: 0,
-                        min: 0,
-                        max: 100,
-                        title: "Parameter 3",
-                        startAnimationTime: 0
-                    });
-
-                    var data = [], totalPoints = 300;
-                    function getRandomData() {
-                        if (data.length > 0)
-                            data = data.slice(1);
-
-                        // do a random walk
-                        while (data.length < totalPoints) {
-                            var prev = data.length > 0 ? data[data.length - 1] : 50;
-                            var y = prev + Math.random() * 10 - 5;
-                            if (y < 0)
-                                y = 0;
-                            if (y > 100)
-                                y = 100;
-                            data.push(y);
-                        }
-
-                        // zip the generated y values with the x values
-                        var res = [];
-                        for (var i = 0; i < data.length; ++i)
-                            res.push([i, data[i]])
-                        return res;
-                    }
-
-                    // setup control widget
-                    var updateInterval = 30;
-                    var gaugeUpdateInterval = 5000;
-
-                    // setup plot
-                    var options = {
-                        series: { shadowSize: 0 }, // drawing is faster without shadows
-                        yaxis: { min: 0, max: 100 },
-                        xaxis: { show: false }
-                    };
-                    var plot = $.plot($("#placeholder"), [ getRandomData() ], options);
-
-                    function updateGauges() {
-                        g1.refresh(Math.floor(Math.random()*101));
-                        g2.refresh(Math.floor(Math.random()*101));
-                        g3.refresh(Math.floor(Math.random()*101));
-                        setTimeout(updateGauges, gaugeUpdateInterval);
-                    }
-                    function updateGraph() {
-                        plot.setData([ getRandomData() ]);
-                        plot.draw();
-                        setTimeout(updateGraph, updateInterval);
-                    }
-
-                    updateGraph();
-                    updateGauges();
-                });
-
-               $(window).bind('resize', function () { 
-
-                    $("#placeholder").css("width", $("#outer").width());
-                    $("#tablebox").css("height", $("#outer").height()+40);
-
-                });
-
-            });
-        </script>
+        <script type="text/javascript" src="assets/js/our.js"></script>
 
         <div id="push"></div>
     </div> <!-- Wrapper -->

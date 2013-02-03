@@ -1,0 +1,19 @@
+<html>
+	<body>
+		<script type="text/javascript">
+			var xmlhttp;
+			if (window.XMLHttpRequest){xmlhttp=new XMLHttpRequest();}
+			else{xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");}
+			xmlhttp.onreadystatechange=function()	{
+			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			  {
+    			obj = JSON && JSON.parse(xmlhttp.responseText) || $.parseJSON(xmlhttp.responseText);
+    			alert(obj.val);
+    			return obj.val;
+			  }
+			}
+			xmlhttp.open("GET","get.php?id="+id,true);
+			xmlhttp.send();
+		</script>
+	</body>
+</html>
