@@ -73,21 +73,111 @@
           padding-right: 20px;
         }
       }
+
+      /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+    }
+
     </style>
   </head>
   <body>
     
-    <div class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#">
-            DashBoard
-          </a>
-        </div>
-      </div>
-    </div>
-
     <div id="wrap">
+
+             <!-- NAVBAR
+        ================================================== -->
+        <div class="navbar-wrapper">
+          <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+          <div class="container">
+
+            <div class="navbar navbar-inverse">
+              <div class="navbar-inner">
+                <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#" style="color:white;">DashBoard</a>
+                <div class="nav-collapse collapse">
+                  <ul class="nav pull-right">
+                    <li><a href="#about"><i class="icon-cog icon-white"></i> Log</a></li>
+                    <li><a href="#contact"><i class="icon-list icon-white"></i> Settings</a></li>
+                  </ul>
+                </div><!--/.nav-collapse -->
+              </div><!-- /.navbar-inner -->
+            </div><!-- /.navbar -->
+
+          </div> <!-- /.container -->
+        </div><!-- /.navbar-wrapper -->
+
+        </br>
+        </br>
+
+        <!-- TABLE TABLE TABLE TABLE TABLE -->
         <div class="container">
 
             <div class="row-fluid">
@@ -180,6 +270,8 @@
                     </tr>
                 </table>
             </div>
+
+            <!-- GRAPH GRAPH GRAPH GRAPH -->
             <div class="well span8" id="outer">
                 <center><p>Temperature Monitor</p></center>
                 <div id="placeholder" style="width:600px;height:300px"></div>
@@ -188,22 +280,7 @@
 
         </div>
 
-        <div class="container">
-
-            <div class="row-fluid">
-                <div class="well span12">
-                      <center>Overall Danger Meter</center>
-                      </br>
-                      <div class="progress">
-                      <div class="bar bar-success" style="width: 35%;"></div>
-                      <div class="bar bar-warning" style="width: 20%;"></div>
-                      <div class="bar bar-danger" style="width: 10%;"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+        <!-- INDICATORS INDICATORS INDICATORS -->
         <div class="container">
 
             <div class="row-fluid">
@@ -224,6 +301,20 @@
                 </div>
             </div>
 
+        <!-- METER METER METER METER METER -->
+
+            <div class="row-fluid">
+                <div class="well span12">
+                      <center>Overall Danger Meter</center>
+                      </br>
+                      <div class="progress">
+                      <div class="bar bar-success" style="width: 35%;"></div>
+                      <div class="bar bar-warning" style="width: 20%;"></div>
+                      <div class="bar bar-danger" style="width: 10%;"></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script src="assets/js/bootstrap.js">
@@ -232,78 +323,92 @@
         <script type="text/javascript">
             $(document).ready(function(){
 
-               $(function () {
+                $(function () {
 
+                    $("#placeholder").css("width", $("#outer").width());
                     $("#tablebox").css("height", $("#outer").height()+40);
-
-                    var nl = $("#outer").height();
-                    var nw = $("#outer").width();
-     
-                    $("#placeholder").css("height", nl);
-                    $("#placeholder").css("width", nw);
-
-                    var d1 = [];
-                    for (var i = 0; i < 14; i += 0.5)
-                        d1.push([i, Math.sin(i)]);
-
-                    var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
-
-                    // a null signifies separate line segments
-                    var d3 = [[0, 12], [7, 12], null, [7, 2.5], [12, 2.5]];
                     
-                    $.plot($("#placeholder"), [ d1, d2, d3 ]);
-
                     var g1 = new JustGage({
                         id: "gauge1",
-                        value: 25,
+                        value: 0,
                         min: 0,
                         max: 100,
                         title: "Parameter 1",
-                        startAnimationTime: 2500,
-                        startAnimationType: "bounce"
+                        startAnimationTime: 0
                     });
 
                     var g2 = new JustGage({
                         id: "gauge2",
-                        value: 50,
+                        value: 0,
                         min: 0,
                         max: 100,
                         title: "Parameter 2",
-                        startAnimationTime: 2500,
-                        startAnimationType: "bounce"
+                        startAnimationTime: 0
                     });
 
                     var g3 = new JustGage({
                         id: "gauge3",
-                        value: 75,
+                        value: 0,
                         min: 0,
                         max: 100,
                         title: "Parameter 3",
-                        startAnimationTime: 2500,
-                        startAnimationType: "bounce"
+                        startAnimationTime: 0
                     });
 
+                    var data = [], totalPoints = 300;
+                    function getRandomData() {
+                        if (data.length > 0)
+                            data = data.slice(1);
+
+                        // do a random walk
+                        while (data.length < totalPoints) {
+                            var prev = data.length > 0 ? data[data.length - 1] : 50;
+                            var y = prev + Math.random() * 10 - 5;
+                            if (y < 0)
+                                y = 0;
+                            if (y > 100)
+                                y = 100;
+                            data.push(y);
+                        }
+
+                        // zip the generated y values with the x values
+                        var res = [];
+                        for (var i = 0; i < data.length; ++i)
+                            res.push([i, data[i]])
+                        return res;
+                    }
+
+                    // setup control widget
+                    var updateInterval = 30;
+                    var gaugeUpdateInterval = 5000;
+
+                    // setup plot
+                    var options = {
+                        series: { shadowSize: 0 }, // drawing is faster without shadows
+                        yaxis: { min: 0, max: 100 },
+                        xaxis: { show: false }
+                    };
+                    var plot = $.plot($("#placeholder"), [ getRandomData() ], options);
+
+                    function updateGauges() {
+                        g1.refresh(Math.floor(Math.random()*101));
+                        g2.refresh(Math.floor(Math.random()*101));
+                        g3.refresh(Math.floor(Math.random()*101));
+                        setTimeout(updateGauges, gaugeUpdateInterval);
+                    }
+                    function updateGraph() {
+                        plot.setData([ getRandomData() ]);
+                        plot.draw();
+                        setTimeout(updateGraph, updateInterval);
+                    }
+
+                    updateGraph();
+                    updateGauges();
                 });
 
                $(window).bind('resize', function () { 
 
-                    var nl = $("#outer").height();
-                    var nw = $("#outer").width();
-     
-                    $("#placeholder").css("height", nl);
-                    $("#placeholder").css("width", nw);
-
-                    var d1 = [];
-                    for (var i = 0; i < 14; i += 0.5)
-                        d1.push([i, Math.sin(i)]);
-
-                    var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
-
-                    // a null signifies separate line segments
-                    var d3 = [[0, 12], [7, 12], null, [7, 2.5], [12, 2.5]];
-                    
-                    $.plot($("#placeholder"), [ d1, d2, d3 ]);
-
+                    $("#placeholder").css("width", $("#outer").width());
                     $("#tablebox").css("height", $("#outer").height()+40);
 
                 });
@@ -317,7 +422,7 @@
     <div id="footer">
       <div class="container">
         </br>
-        <p class="muted credit">Your Project Page <a href="http://martinbean.co.uk">PROJECT</a> - InternetThings Dashboard <a href="https://github.com/kevinvincent/InternetThings">Github</a>.</p>
+        <p class="muted credit">Your Project Page <a href="http://example.com">Demo Project</a> - InternetThings Dashboard <a href="https://github.com/kevinvincent/InternetThings">Github</a>.</p>
       </div>
     </div>
   </body>
