@@ -2,7 +2,7 @@ InternetThings
 ==============
 A PHP open source dashboard for the Internet of Things, connect your device, send your data, and visualize your world.
 
-![Screenshot of InternetThings in action](/screenshots/1.png?raw=true)
+![Screenshot of InternetThings in action](https://raw2.github.com/kevinvincent/InternetThings/master/screenshots/1.png)
 
 Usage
 -----
