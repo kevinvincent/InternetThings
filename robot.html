@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JQuery Cycle Plugin - Basic Demo</title>
+<style type="text/css">
+.slideshow { height: 232px; width: 232px; margin: auto }
+.slideshow div { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
+</style>
+<!-- include jQuery library -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<!-- include Cycle plugin -->
+<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow').cycle({
+		fx: 'shuffle' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+});
+</script>
+</head>
+<body>
+	<div class="slideshow">
+		<div class="well span5" id="outer" align="center">      
+                <b>Initial Design</b></br>
+                • Small Scoop</br>
+                • Defensive</br>
+                • Hoard As Many Sacks as Possible</br></br>
+		  <center>
+          <img src="robot/back_gears.jpg" width="300px" height="250px">
+          </br></br>Lift Gearing
+          </center>
+        </div>
+		<div class="well span5" id="outer">      
+			  <b>Initial Design – Flaws</b></br>
+			  • Couldn’t Intake lift many sacks</br>
+			  • Can’t Score</br>
+			  • Basket was not large enough to store all Sacks</br>
+			  • Slow Intake with one motor</br></br>
+		  <center>
+          <img src="robot/back_gears.jpg" width="300px" height="250px">
+          </br></br>Lift Gearing
+          </center>
+        </div><div class="well span5" id="outer">      
+				<b>Revision I – Bellarmine Tournament</b></br>
+				• Install larger Intake</br>
+				• Change Intake to 2 393 High Speed Motors</br>
+				• Advanced Pid Control Algorithms</br>
+				• Driver Control Improved</br></br>
+		  <center>
+          <img src="robot/back_gears.jpg" width="300px" height="250px">
+          </br></br>Lift Gearing
+          </center>
+        </div><div class="well span5" id="outer">      
+				<b>Revision II</b></br>
+				• Upgrade Basket Size – Capacity: 25 Sacks</br>
+				• Overhaul gearing System - 50:1</br>
+				• Able to lift Many Sacks</br>
+				• PID Tuned</br></br>
+		  <center>
+          <img src="robot/back_gears.jpg" width="300px" height="250px">
+          </br></br>Lift Gearing
+          </center>
+        </div><div class="well span5" id="outer">      
+			<b>Revision III – Central Valley Tournament Champions</b></br>
+			• World Class Programing Skills Routine</br>
+			• New Autonomous</br>
+			• Reinforce Robot’s Drive Train and Lift Subsystem</br></br>
+		  <center>
+          <img src="robot/back_gears.jpg" width="300px" height="250px">
+          </br></br>Lift Gearing
+          </center>
+        </div>
+	</div>
+</body>
+</html>

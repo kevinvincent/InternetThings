@@ -59,8 +59,7 @@
                 <a class="brand" href="#" style="color:white;">DashBoard</a>
                 <div class="nav-collapse collapse">
                   <ul class="nav pull-right">
-                    <li><a href="#about"><i class="icon-cog icon-white"></i> Log</a></li>
-                    <li><a href="#contact"><i class="icon-list icon-white"></i> Settings</a></li>
+                    <li><a href="index.php"><i class="icon-box icon-white"></i> Home</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
               </div><!-- /.navbar-inner -->
@@ -78,92 +77,19 @@
             <div class="row-fluid">
             <div class="well span4" style="overflow-y:auto;" id="tablebox">
                 <center><h4>Data Sent To Dashboard</h4></center>
-                <table class="table table-condensed">
-                    <tr>
-                        <td>1</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr class="success">
-                        <td>2</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr class="error">
-                        <td>4</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Error</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr class="info">
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Info</td>
-                    </tr>
-                    <tr class="warning">
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Warning</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>TB - Monthly</td>
-                        <td>01/04/2012</td>
-                        <td>Approved</td>
-                    </tr>
-                </table>
+                <form>
+                  <fieldset>
+                    <legend>Legend</legend>
+                    <label>Label name</label>
+                    <input type="text" placeholder="Type something…">
+                    <span class="help-block">Example block-level help text here.</span>
+                    <label class="checkbox">
+                      <input type="checkbox"> Check me out
+                    </label>
+                    <button type="submit" class="btn">Submit</button>
+                  </fieldset>
+                </form>
+                
             </div>
 
             <!-- GRAPH GRAPH GRAPH GRAPH -->

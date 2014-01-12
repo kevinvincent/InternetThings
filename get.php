@@ -1,6 +1,6 @@
 <?php
 	if($_GET) {
-		$file = file_get_contents($_GET['id'].".txt");
+		$file = file_get_contents("widgets/".$_GET['id'].".txt");
 
 		if (!$data == false){
 			$data = array('success'=> true,'val'=>(int)$file);

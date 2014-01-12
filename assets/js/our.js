@@ -84,10 +84,10 @@
                     }
 
                     function updateGauges() {
-                        var dat = getFromServer("gauge1");
-                        g1.refresh(dat);
-                        g2.refresh(dat);
-                        g3.refresh(dat);
+                        //var dat = getFromServer("gauge1");
+                        g1.refresh(45);
+                        g2.refresh(30);
+                        g3.refresh(75);
                         setTimeout(updateGauges, gaugeUpdateInterval);
                     }
                     function updateGraph() {
